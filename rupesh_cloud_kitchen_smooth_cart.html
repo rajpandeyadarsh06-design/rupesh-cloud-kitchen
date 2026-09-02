@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>RUPESH Cloud Kitchen — Fresh. Hot. Delivered.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#ff5a1f;--orange2:#ff8a3d;--ink:#171717;--muted:#707070;--cream:#fff8f1;--card:#fff;--line:#eee;--green:#18a558}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",Arial,sans-serif}
+a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:50;background:rgba(255,248,241,.92);backdrop-filter:blur(14px);border-bottom:1px solid #eee;padding:14px 0}
+.navin{display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:800;font-size:21px}.brand span{color:var(--orange)}
+.navlinks{display:flex;gap:24px;font-size:14px;font-weight:700}.cartbtn{background:var(--ink);color:white;border:0;border-radius:999px;padding:11px 17px;font-weight:800;cursor:pointer}
+.hero{padding:55px 0 35px}.heroGrid{display:grid;grid-template-columns:1.02fr .98fr;gap:42px;align-items:center}
+.badge{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid #eee;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:800}
+h1{font-family:"Playfair Display",serif;font-size:clamp(46px,6vw,76px);line-height:.98;margin:18px 0}.hero h1 span{color:var(--orange)}
+.hero p{font-size:17px;line-height:1.7;color:var(--muted);max-width:560px}.actions{display:flex;gap:12px;margin:25px 0}.primary,.secondary{padding:14px 20px;border-radius:12px;font-weight:800;cursor:pointer;border:0}.primary{background:var(--orange);color:white;box-shadow:0 12px 30px #ff5a1f33}.secondary{background:white;border:1px solid #ddd}
+.heroImg{height:470px;border-radius:32px;overflow:hidden;position:relative;box-shadow:0 25px 60px #0002}.heroImg img{width:100%;height:100%;object-fit:cover}.heroTag{position:absolute;left:18px;bottom:18px;background:#fff;border-radius:16px;padding:14px 16px;font-weight:800;box-shadow:0 8px 30px #0002}
+.sectionHead{display:flex;justify-content:space-between;align-items:end;margin:50px 0 18px}.sectionHead h2{font-family:"Playfair Display",serif;font-size:35px;margin:0}.sectionHead p{margin:5px 0;color:var(--muted)}
+.chips{display:flex;gap:10px;overflow:auto;padding-bottom:10px}.chip{white-space:nowrap;border:1px solid #ddd;background:white;padding:10px 15px;border-radius:999px;font-weight:700;cursor:pointer}.chip.active{background:var(--ink);color:white;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.food{background:var(--card);border-radius:20px;overflow:hidden;border:1px solid #eee;box-shadow:0 8px 28px #00000009;transition:.2s}.food:hover{transform:translateY(-4px);box-shadow:0 18px 35px #00000015}.foodpic{height:175px;position:relative;overflow:hidden}.foodpic img{width:100%;height:100%;object-fit:cover;transition:.3s}.food:hover img{transform:scale(1.05)}.vegdot{position:absolute;top:12px;left:12px;background:#fff;border-radius:999px;padding:6px 9px;font-size:11px;font-weight:800}.foodbody{padding:15px}.food h3{margin:0 0 6px;font-size:17px}.desc{font-size:12px;color:var(--muted);min-height:32px}.row{display:flex;align-items:center;justify-content:space-between;margin-top:13px}.price{font-size:18px;font-weight:800}.add{background:var(--orange);color:white;border:0;border-radius:10px;padding:9px 13px;font-weight:800;cursor:pointer}
+.offer{margin:55px 0;background:linear-gradient(110deg,#171717,#2b201b);color:white;border-radius:26px;padding:32px;display:flex;justify-content:space-between;align-items:center;gap:20px;overflow:hidden}.offer h2{font-family:"Playfair Display",serif;font-size:34px;margin:0 0 6px}.offer p{margin:0;color:#ccc}.offer b{color:#ff9b63}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:35px 0}.infoCard{background:white;border:1px solid #eee;border-radius:18px;padding:20px}.infoCard strong{display:block;margin-bottom:5px}.infoCard span{color:var(--muted);font-size:14px}
+footer{margin-top:55px;background:#141414;color:white;padding:40px 0}.footergrid{display:flex;justify-content:space-between;gap:30px}.footmuted{color:#aaa}
+.drawer{position:fixed;inset:0;background:#0006;z-index:100;display:none}.drawer.open{display:block}.panel{position:absolute;right:0;top:0;height:100%;width:min(440px,100%);background:#fff;padding:22px;overflow:auto}.close{float:right;border:0;background:#eee;border-radius:50%;width:36px;height:36px;font-size:20px;cursor:pointer}.panel h2{margin-top:8px}.cartitem{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid #eee}.cartitem img{width:65px;height:65px;border-radius:12px;object-fit:cover}.cartinfo{flex:1}.qty{display:flex;gap:8px;align-items:center;margin-top:7px}.qty button{border:1px solid #ddd;background:white;border-radius:7px;width:27px;height:27px;cursor:pointer}.checkout{margin-top:20px}.checkout input,.checkout select{width:100%;padding:12px;margin:6px 0 10px;border:1px solid #ddd;border-radius:10px;font:inherit}.bill{background:#fafafa;border-radius:14px;padding:15px;margin:12px 0}.billrow{display:flex;justify-content:space-between;padding:5px 0}.grand{font-size:20px;font-weight:800;border-top:1px solid #ddd;margin-top:8px;padding-top:10px}.place{width:100%;padding:14px;background:var(--orange);color:#fff;border:0;border-radius:11px;font-weight:800;font-size:16px;cursor:pointer}
+.empty{text-align:center;padding:40px 10px;color:var(--muted)}
+@media(max-width:900px){.heroGrid{grid-template-columns:1fr}.heroImg{height:360px}.grid{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}}
+@media(max-width:560px){.wrap{padding:0 14px}.hero{padding-top:32px}.heroImg{height:300px;border-radius:22px}.hero p{font-size:15px}.sectionHead{margin-top:35px}.sectionHead h2{font-size:29px}.grid{grid-template-columns:1fr 1fr;gap:10px}.foodpic{height:135px}.foodbody{padding:11px}.food h3{font-size:14px}.desc{font-size:11px}.price{font-size:16px}.add{padding:8px 10px}.offer{padding:24px;display:block}.offer button{margin-top:18px}.info{grid-template-columns:1fr}.footergrid{display:block}.hero h1{font-size:48px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap navin">
+<a class="brand" href="#"><span>RUPESH</span> Cloud Kitchen</a>
+<div class="navlinks"><a href="#menu">Menu</a><a href="#offers">Offers</a><a href="#why">Why Us</a></div>
+<button class="cartbtn" onclick="openCart()">🛒 Cart <span id="cartCount">0</span></button>
+</div></nav>
+
+<header class="hero"><div class="wrap heroGrid">
+<div>
+<div class="badge">🔥 Freshly prepared • Delivery ready</div>
+<h1>Good food.<br><span>Zero waiting.</span></h1>
+<p>Cravings sorted from our kitchen to your door. Loaded burgers, cheesy pizza, creamy pasta, refreshing shakes and desi favourites — all in one place.</p>
+<div class="actions"><a class="primary" href="#menu">Order Now →</a><a class="secondary" href="#menu">View Menu</a></div>
+</div>
+<div class="heroImg"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1000&q=85" alt="Fresh pizza"><div class="heroTag">⭐ Customer favourite • Pizza</div></div>
+</div></header>
+
+<main class="wrap" id="menu">
+<div class="sectionHead"><div><h2>Explore the menu</h2><p>Made to order. Packed with flavour.</p></div></div>
+<div class="chips"><button class="chip active" onclick="filterMenu('all',this)">All</button><button class="chip" onclick="filterMenu('veg',this)">🥗 Veg</button><button class="chip" onclick="filterMenu('nonveg',this)">🍗 Non-Veg</button><button class="chip" onclick="filterMenu('drink',this)">🥤 Drinks</button></div>
+<div class="grid" id="menuGrid"></div>
+
+<section class="offer" id="offers"><div><h2>Hungry? Make it a combo.</h2><p>Order your favourites and enjoy a <b>free-delivery style promo UI</b> on your first order.</p></div><button class="primary" onclick="document.getElementById('menu').scrollIntoView()">Explore Food</button></section>
+
+<section id="why"><div class="sectionHead"><div><h2>Why RUPESH?</h2><p>Simple food, sharp experience.</p></div></div>
+<div class="info"><div class="infoCard"><strong>⚡ Fast & Fresh</strong><span>Prepared fresh for every order.</span></div><div class="infoCard"><strong>🍽️ Big Variety</strong><span>Indian favourites + fast food + drinks.</span></div><div class="infoCard"><strong>📦 Delivery Ready</strong><span>Clean, simple and mobile-first ordering.</span></div></div></section>
+</main>
+
+<footer><div class="wrap footergrid"><div><h2>RUPESH Cloud Kitchen</h2><p class="footmuted">Fresh • Hot • Delivered</p></div><div><p class="footmuted">© 2026 RUPESH Cloud Kitchen</p><p class="footmuted">This demo UI needs a real backend/payment gateway for live orders.</p></div></div></footer>
+
+<div class="drawer" id="drawer" onclick="if(event.target===this)closeCart()"><aside class="panel">
+<button class="close" onclick="closeCart()">×</button><h2>Your Cart</h2><div id="cartItems"></div><div class="bill" id="bill"></div>
+<div class="checkout"><h3>Delivery details</h3><input id="custName" placeholder="Your name"><input id="phone" placeholder="Phone number"><input id="address" placeholder="Delivery address"><select id="payment"><option>Cash on Delivery</option><option>UPI</option><option>Card</option></select><button class="place" onclick="placeOrder()">Place Order</button></div>
+</aside></div>
+
+<script>
+const foods=[
+["Paneer Chilli",159,"veg","https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=82","Crispy paneer tossed in spicy sauce"],
+["Butter Paneer",179,"veg","https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=700&q=82","Creamy, rich and buttery"],
+["White Sauce Pasta",139,"veg","https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?auto=format&fit=crop&w=700&q=82","Creamy pasta with herbs"],
+["Red Sauce Pasta",129,"veg","https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=700&q=82","Tangy tomato sauce"],
+["White Sauce Paneer Pasta",169,"veg","https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=700&q=82","Creamy pasta with paneer"],
+["Red Sauce Paneer Pasta",159,"veg","https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=700&q=82","Tomato pasta with paneer"],
+["Creamy Spicy Paneer Pasta",179,"veg","https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=700&q=82","Creamy spicy favourite"],
+["Masala Maggi",89,"veg","https://images.unsplash.com/photo-1625398407796-82650a8c135f?auto=format&fit=crop&w=700&q=82","Hot, spicy comfort food"],
+["Margherita Pizza",149,"veg","https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=700&q=82","Classic cheesy pizza"],
+["Farmhouse Pizza",199,"veg","https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=82","Loaded with veggies"],
+["Paneer Pizza",229,"veg","https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=700&q=82","Paneer-packed pizza"],
+["Veg Loaded Pizza",249,"veg","https://images.unsplash.com/photo-1548365328-8b849e6f90a8?auto=format&fit=crop&w=700&q=82","Extra loaded and cheesy"],
+["Veg Burger",99,"veg","https://images.unsplash.com/photo-1520072959219-c595dc870360?auto=format&fit=crop&w=700&q=82","Crispy veg patty burger"],
+["Cheese Burger",129,"veg","https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=82","Classic cheesy burger"],
+["Paneer Burger",149,"veg","https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=82","Spicy paneer burger"],
+["Veg Loaded Burger",169,"veg","https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=700&q=82","Loaded with fresh toppings"],
+["Spring Roll",119,"veg","https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=700&q=82","Crispy golden rolls"],
+["Chocolate Shake",99,"drink","https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=700&q=82","Thick chocolate shake"],
+["Vanilla Shake",99,"drink","https://images.unsplash.com/photo-1553787499-6f913386027d?auto=format&fit=crop&w=700&q=82","Smooth vanilla shake"],
+["Strawberry Shake",109,"drink","https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=700&q=82","Creamy strawberry shake"],
+["Faluda",139,"drink","https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=700&q=82","Chilled layered faluda"],
+["Butter Chicken",249,"nonveg","https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=700&q=82","Creamy Indian chicken curry"],
+["Fried Chicken",199,"nonveg","https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=700&q=82","Crispy fried chicken"],
+["Fried Egg Rice",149,"nonveg","https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=82","Wok-tossed egg rice"],
+["Chicken Biryani",199,"nonveg","https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=700&q=82","Aromatic dum-style biryani"],
+["Chicken Lollipop",199,"nonveg","https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=700&q=82","Crispy saucy chicken"],
+["Chicken Tikka",219,"nonveg","https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=700&q=82","Char-grilled tikka"],
+["Desi Style Chicken",229,"nonveg","https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=82","Desi masala chicken"],
+["Desi Style Mutton",299,"nonveg","https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=700&q=82","Rich desi-style mutton"]
+];
+let cart={};
+function filterMenu(type,btn){document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));btn.classList.add("active");render(type)}
+function render(type="all"){let list=type==="all"?foods:foods.filter(x=>x[2]===type);document.getElementById("menuGrid").innerHTML=list.map((f,i)=>`<article class="food"><div class="foodpic"><img loading="lazy" src="${f[3]}" alt="${f[0]}"><span class="vegdot">${f[2]==="veg"?"● VEG":f[2]==="drink"?"🥤 DRINK":"● NON-VEG"}</span></div><div class="foodbody"><h3>${f[0]}</h3><div class="desc">${f[4]}</div><div class="row"><span class="price">₹${f[1]}</span><button class="add" onclick="add(${foods.indexOf(f)})">Add +</button></div></div></article>`).join("")}
+function add(i){cart[i]=(cart[i]||0)+1;update();toast("✓ "+foods[i][0]+" added to cart")}
+function change(i,d){cart[i]=(cart[i]||0)+d;if(cart[i]<=0)delete cart[i];update()}
+function update(){let count=Object.values(cart).reduce((a,b)=>a+b,0);document.getElementById("cartCount").textContent=count;let box=document.getElementById("cartItems");let keys=Object.keys(cart);if(!keys.length){box.innerHTML='<div class="empty">🛒<br><br>Your cart is empty.<br>Add something delicious.</div>';document.getElementById("bill").innerHTML="";return}box.innerHTML=keys.map(k=>{let f=foods[k],q=cart[k];return `<div class="cartitem"><img src="${f[3]}" alt=""><div class="cartinfo"><strong>${f[0]}</strong><div>₹${f[1]}</div><div class="qty"><button onclick="change(${k},-1)">−</button><span>${q}</span><button onclick="change(${k},1)">+</button></div></div><strong>₹${f[1]*q}</strong></div>`}).join("");let sub=keys.reduce((s,k)=>s+foods[k][1]*cart[k],0);document.getElementById("bill").innerHTML=`<div class="billrow"><span>Subtotal</span><b>₹${sub}</b></div><div class="billrow"><span>Delivery</span><b>₹0</b></div><div class="billrow grand"><span>Total</span><b>₹${sub}</b></div>`}
+function openCart(){document.getElementById("drawer").classList.add("open");update()}
+function closeCart(){document.getElementById("drawer").classList.remove("open")}
+function placeOrder(){if(!Object.keys(cart).length)return alert("Your cart is empty.");let n=document.getElementById("custName").value.trim(),p=document.getElementById("phone").value.trim(),a=document.getElementById("address").value.trim();if(!n||!p||!a)return alert("Please fill name, phone and address.");alert("Order UI is ready. For real orders, connect this page to a secure backend and payment provider.");}
+render();update();
+function toast(msg){
+  let t=document.getElementById("toast");
+  if(!t){t=document.createElement("div");t.id="toast";document.body.appendChild(t);
+    Object.assign(t.style,{position:"fixed",left:"50%",bottom:"24px",transform:"translateX(-50%)",
+    background:"#171717",color:"#fff",padding:"12px 17px",borderRadius:"999px",zIndex:"999",
+    fontWeight:"800",fontSize:"13px",boxShadow:"0 10px 30px #0003",transition:"opacity .2s"});
+  }
+  t.textContent=msg;t.style.opacity="1";clearTimeout(window._toast);
+  window._toast=setTimeout(()=>t.style.opacity="0",1300);
+}
+</script>
+</body>
+</html>
